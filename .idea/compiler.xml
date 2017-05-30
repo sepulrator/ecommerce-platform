@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="config-server_main" target="1.8" />
+      <module name="config-server_test" target="1.8" />
+      <module name="ecommerce.platform.microservices_main" target="1.8" />
+      <module name="ecommerce.platform.microservices_test" target="1.8" />
+      <module name="ecommerce.platform.product-microservice_main" target="1.8" />
+      <module name="ecommerce.platform.product-microservice_test" target="1.8" />
+      <module name="ecommerce.platform.search-microservice_main" target="1.8" />
+      <module name="ecommerce.platform.search-microservice_test" target="1.8" />
+      <module name="ecommerce.platform_main" target="1.8" />
+      <module name="ecommerce.platform_test" target="1.8" />
+      <module name="edge-server_main" target="1.8" />
+      <module name="edge-server_test" target="1.8" />
+      <module name="gateway-server_main" target="1.8" />
+      <module name="gateway-server_test" target="1.8" />
+      <module name="microservices_main" target="1.8" />
+      <module name="microservices_test" target="1.8" />
+      <module name="monitoring-server_main" target="1.8" />
+      <module name="monitoring-server_test" target="1.8" />
+      <module name="product-microservice_main" target="1.8" />
+      <module name="product-microservice_test" target="1.8" />
+      <module name="registry-server_main" target="1.8" />
+      <module name="registry-server_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

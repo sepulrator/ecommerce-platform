@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.cloud:spring-cloud-starter-hystrix-dashboard:1.1.5.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-hystrix-dashboard/1.1.5.RELEASE/c84e82ac4cf4a00cbd7dd6c6daedb99437041448/spring-cloud-starter-hystrix-dashboard-1.1.5.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-hystrix-dashboard/1.1.5.RELEASE/40f7e05ace0a6c065d7d9fe8df53a7ca4eee19f6/spring-cloud-starter-hystrix-dashboard-1.1.5.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

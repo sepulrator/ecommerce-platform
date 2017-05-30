@@ -1,0 +1,9 @@
+//rootProject.name = 'ecommerce.platform.microservices'
+
+include 'product-microservice'
+include 'config-server'
+include 'edge-server'
+include 'monitoring-server'
+include 'registry-server'
+include 'gateway-server'
+

@@ -1,15 +1,25 @@
+logging:
+  level:
+    org.springframework: INFO
+
 spring:
+  application:
+      name: config-server
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/shared
-  profiles:
-     active: native
+        git:
+          uri: https://github.com/sepulrator/ecommerce-platform-config-repo
 
 server:
   port: 8888
 
+management:
+  security:
+    enabled: false
+
 security:
-  user:
-    password: ${CONFIG_SERVICE_PASSWORD}
+  basic:
+    enabled: false
+
+

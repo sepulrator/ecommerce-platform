@@ -2,8 +2,9 @@ spring:
   application:
     name: product-microservice
   cloud:
+    enabled: true
     config:
-      uri: http://localhost:8888
-      #fail-fast: true
-      password: ${CONFIG_SERVICE_PASSWORD}
-      username: user
+      uri: http://config-server:8888
+      fail-fast: true
+      retry:
+        maxAttempts: 20

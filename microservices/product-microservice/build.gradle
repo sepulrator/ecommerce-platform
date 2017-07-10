@@ -3,8 +3,8 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     ext {
-        springBootVersion = '1.5.3.RELEASE'
-        springCloudVersion = 'Brixton.SR5'
+        springBootVersion = '1.5.2.RELEASE'
+        springCloudVersion = 'Dalston.SR1'
     }
     repositories {
         mavenCentral()
@@ -12,22 +12,23 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3")
+        classpath('io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE')
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'spring-boot'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 jar {
     baseName = 'product-microservice'
-    version= ''
-
+    version= '0.0.2-SNAPSHOT'
 }
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 
 repositories {
     mavenLocal()
@@ -42,26 +43,17 @@ dependencyManagement {
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-            {
-                exclude module: 'spring-boot-starter-tomcat'
-            }
-    compile("org.springframework.boot:spring-boot-starter-undertow")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
+        compile "org.springframework.cloud:spring-cloud-starter-config"
+        compile "org.springframework.boot:spring-boot-starter-web"
+        compile "org.springframework.cloud:spring-cloud-starter-feign"
+        compile "org.springframework.cloud:spring-cloud-starter-eureka"
+        compile "org.springframework.boot:spring-boot-starter-data-mongodb"
+        compile "org.springframework.boot:spring-boot-starter-actuator"
+        compile "org.springframework.cloud:spring-cloud-starter-bus-amqp"
+        compile "org.springframework.cloud:spring-cloud-netflix-hystrix-stream"
+        testCompile "de.flapdoodle.embed:de.flapdoodle.embed.mongo:1.50.3"
+}
 
-    compile("org.springframework.cloud:spring-cloud-starter-hystrix")
-    compile("org.springframework.cloud:spring-cloud-starter-eureka")
-    compile("org.springframework.cloud:spring-cloud-starter-config")
-    compile("org.springframework.cloud:spring-cloud-starter-bus-amqp")
-    compile('org.springframework.cloud:spring-cloud-starter-sleuth')
-    compile('org.springframework.cloud:spring-cloud-sleuth-stream')
-
-    compile("org.springframework.cloud:spring-cloud-starter-oauth2")
-    compile("org.springframework.cloud:spring-cloud-starter-security")
-
-    compile("org.apache.httpcomponents:httpclient:4.2.1")
-    compile("org.apache.httpcomponents:fluent-hc:4.2.1")
-
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
 }

@@ -2,11 +2,10 @@ version: '2.1'
 
 services:
   rabbitmq:
-    restart: always
     ports:
       - 5672:5672
 
-  config:
+  config-server:
     build: microservices/config-server
     ports:
       - 8888:8888
@@ -20,12 +19,12 @@ services:
   product-microservice:
     build: microservices/product-microservice
     ports:
-      - 5000:5000
+      - 8000:8000
 
-  auth-mongodb:
+  product-mongodb:
     build: data-stores/mongodb
     ports:
-      - 25000:27017
+      - 26000:27017
 
   monitoring-server:
-    build: microservices/monitoring-server
+        build: microservices/monitoring-server
